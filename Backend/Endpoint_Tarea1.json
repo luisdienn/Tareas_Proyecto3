@@ -1,0 +1,392 @@
+﻿{
+  "type": "collection.insomnia.rest/5.0",
+  "name": "Tarea_1",
+  "meta": {
+    "id": "wrk_5d9c5a85e5334a68b34896df07ae7f38",
+    "created": 1759017569577,
+    "modified": 1759017569577,
+    "description": ""
+  },
+  "collection": [
+    {
+      "url": "{{ _.base_url }}auth/login",
+      "name": "Login User (no auth)",
+      "meta": {
+        "id": "req_d6f7030f965548f089f3811de08ccb39",
+        "created": 1715468092150,
+        "modified": 1759090847597,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843724
+      },
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"user.client@gmail.com\", \n\t\"password\": \"user123\"\n}\n"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/9.1.1"
+        }
+      ],
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}categorias?page=1&size=8",
+      "name": "Get Categoria",
+      "meta": {
+        "id": "req_4a05ce7d968347628d1eb8dc07f8d98b",
+        "created": 1758335212453,
+        "modified": 1759018527371,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843649
+      },
+      "method": "GET",
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/11.5.0"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}categorias",
+      "name": "Post Categoria",
+      "meta": {
+        "id": "req_0c7c2e7c218b4a268c6bdb3c5c531eb1",
+        "created": 1758593843424,
+        "modified": 1759451437930,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843674
+      },
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nombre\": \"Computadoras\",\n\t\"descripcion\": \"Esta es la categoria de computadoras\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/11.6.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}categorias/2",
+      "name": "Update Categoria",
+      "meta": {
+        "id": "req_fb736d2232304237a4f5e5a312c97047",
+        "created": 1758595113482,
+        "modified": 1759451457610,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843636.5
+      },
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nombre\": \"Computadorasss\",\n\t\"descripcion\": \"Esta es la categoria de computadoras\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/9.1.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}categorias/2",
+      "name": "Delete Categoria",
+      "meta": {
+        "id": "req_399e9798127e49839bfc72e77df6c4e2",
+        "created": 1758595215363,
+        "modified": 1759451478314,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843624
+      },
+      "method": "DELETE",
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/9.1.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}productos/categoria/2",
+      "name": "Post Producto",
+      "meta": {
+        "id": "req_024293c46fb94df7bb6c29860604e8ed",
+        "created": 1759019629208,
+        "modified": 1759451447719,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843655.25
+      },
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nombre\": \"Lenovo T490\",\n\t\"descripcion\": \"Computadora de trabajo\",\n\t\"precio\": 2000,\n\t\"stock\": 12\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/11.6.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}productos?page=1&size=8",
+      "name": "Get Producto",
+      "meta": {
+        "id": "req_04283fc85a94452197526d560c15eb2b",
+        "created": 1759019814387,
+        "modified": 1759019864874,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843642.75
+      },
+      "method": "GET",
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/11.5.0"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}productos/1",
+      "name": "Update Producto",
+      "meta": {
+        "id": "req_9fe557738f8043a499fae7fb73be5cc1",
+        "created": 1759019848055,
+        "modified": 1759451470261,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843630.25
+      },
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"nombre\": \"Lenovo T490\",\n\t\"descripcion\": \"Computadora de trabajosss\",\n\t\"precio\": 2000,\n\t\"stock\": 12\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/9.1.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    },
+    {
+      "url": "{{ _.base_url }}productos/1",
+      "name": "Delete Producto",
+      "meta": {
+        "id": "req_6fd6f5281d98470ea914f30702586755",
+        "created": 1759019906081,
+        "modified": 1759451485703,
+        "isPrivate": false,
+        "description": "",
+        "sortKey": -1758593843574
+      },
+      "method": "DELETE",
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/9.1.1"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_d6f7030f965548f089f3811de08ccb39', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "settings": {
+        "renderRequestBody": true,
+        "encodeUrl": true,
+        "followRedirects": "global",
+        "cookies": {
+          "send": true,
+          "store": true
+        },
+        "rebuildPath": true
+      }
+    }
+  ],
+  "cookieJar": {
+    "name": "Default Jar",
+    "meta": {
+      "id": "jar_549afcb64b8b4e67852b2f12f8a484e8",
+      "created": 1726541004518,
+      "modified": 1726541004518
+    }
+  },
+  "environments": {
+    "name": "Base Environment",
+    "meta": {
+      "id": "env_74d9a0bf91ff4b44bea95a5bfa95d8b4",
+      "created": 1726541004518,
+      "modified": 1726541004518,
+      "isPrivate": false
+    },
+    "subEnvironments": [
+      {
+        "name": "dev",
+        "meta": {
+          "id": "env_56f8d251d322491da19454cd6d95b31d",
+          "created": 1715442086680,
+          "modified": 1715442160066,
+          "isPrivate": false,
+          "sortKey": 1715442086680
+        },
+        "data": {
+          "base_url": "http://localhost:8080/"
+        },
+        "color": "#11ff00"
+      },
+      {
+        "name": "prod",
+        "meta": {
+          "id": "env_8acd99962d1045c08913dd5531e110ad",
+          "created": 1715442102658,
+          "modified": 1717950400534,
+          "isPrivate": false,
+          "sortKey": 1715442102658
+        },
+        "data": {
+          "base_url": "https://demo-api-spring.azurewebsites.net/"
+        },
+        "color": "#ff0000"
+      }
+    ]
+  }
+}
